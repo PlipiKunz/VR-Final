@@ -25,6 +25,9 @@ public class InCheck : MonoBehaviour {
     {
         text.text = "IN";
         text.color = Color.red;
+        // GameObject target = other.GetComponent<Collider>().transform.parent.gameObject;
+        text.text = other.gameObject;//.GetComponent<Collider>().transform.parent.ToString();
+        //text.text = "Hi";
     }
 
     void OnTriggerExit(Collider other)
