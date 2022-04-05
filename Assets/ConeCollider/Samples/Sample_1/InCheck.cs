@@ -25,7 +25,7 @@ public class InCheck : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        averagePos = Vector3.zero;
+        //averagePos = Vector3.zero;
         text.text = "";
         sumPositions = Vector3.zero;
         for(int x = 0; x < ConeCollisions.Count; x ++){
@@ -35,7 +35,7 @@ public class InCheck : MonoBehaviour {
         for(int x = 0; x < ConeCollisions.Count; x ++){
             if (ConeCollisions[x].name != "XR Origin") sumPositions += ConeCollisions[x].transform.position;
         }
-        averagePos = sumPositions / (ConeCollisions.Count - 1);
+        averagePos = sumPositions / (ConeCollisions.Count);
         // Marker.transform.position = averagePos;
         for(int x = 0; x < ConeCollisions.Count; x ++){
             if (ConeCollisions[x].name != "XR Origin") 
@@ -51,7 +51,7 @@ public class InCheck : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Selectable") {
+        if(other.gameObject.tag == "Selectable" && !ConeCollisions.Contains(other.gameObject)) {
             ConeCollisions.Add(other.gameObject);
             if(other.gameObject.TryGetComponent(out Rigidbody temp)){
                 temp.useGravity = false;
@@ -62,8 +62,8 @@ public class InCheck : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
-        text.text = "OUT";
-        ConeCollisions.Remove(other.gameObject);
+        // text.text = "OUT";
+        //ConeCollisions.Remove(other.gameObject);
         if(other.gameObject.TryGetComponent(out Rigidbody temp)){
             temp.useGravity = true;
         }
