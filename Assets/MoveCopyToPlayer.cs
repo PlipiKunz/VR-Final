@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class MoveCopyToPlayer : MonoBehaviour
 {
-    public float speed = 1.0f;
+    public float speed;
     public Transform target;
     public InCheck inCheck;
     public bool copyExists = false;
@@ -13,6 +13,7 @@ public class MoveCopyToPlayer : MonoBehaviour
     public bool iAmCopy = false;
     public bool inMenu = false;
     public GameObject parent;
+    public GameObject menu;
 
     public Rigidbody rb;
     // Start is called before the first frame update
@@ -33,10 +34,12 @@ public class MoveCopyToPlayer : MonoBehaviour
                 rb.isKinematic = false;
                 rb.useGravity = false;
                 duplicate = Instantiate(gameObject,transform.position,transform.rotation);
+                duplicate.tag = "Duplicate";
                 var duplicateScript = duplicate.GetComponent<MoveCopyToPlayer>();
                 duplicateScript.copyExists = true;
                 duplicateScript.iAmCopy = true;
                 duplicateScript.parent = gameObject;
+                duplicate.AddComponent<OnHoverInteractable>();
                 rb = duplicate.GetComponent<Rigidbody>();
                 copyExists = true;
             }
@@ -45,6 +48,14 @@ public class MoveCopyToPlayer : MonoBehaviour
 
         if (iAmCopy)
         {
+            // if(!menu.activeSelf && inMenu) 
+            // {
+            //     gameObject.SetActive(false);
+            // }
+            // else 
+            // {
+            //     gameObject.SetActive(true);
+            // }
             rb.velocity = new Vector3(0, 0, 0);
             rb.isKinematic = false;
             rb.useGravity = false;
@@ -55,15 +66,19 @@ public class MoveCopyToPlayer : MonoBehaviour
             else
             {
                 float step = speed * Time.deltaTime;
-                Vector3 moveTo = Vector3.MoveTowards(transform.position, target.position, step);
-                if (transform.position == target.position)
-                {
-                    inMenu = true;
+
+                if(target != null){
+                    Vector3 moveTo = Vector3.MoveTowards(transform.position, target.position, step);
+                    if (transform.position == target.position)
+                    {
+                        inMenu = true;
+                    }
+                    else
+                    {
+                        transform.position = moveTo;
+                    }                
                 }
-                else
-                {
-                    transform.position = moveTo;
-                }
+
             }
         }
         

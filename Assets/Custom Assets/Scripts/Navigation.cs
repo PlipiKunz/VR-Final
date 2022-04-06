@@ -26,7 +26,7 @@ public class Navigation : MonoBehaviour
     private bool prevSecondaryButton = false;
     public GameObject menuParent;
 
-    public bool inMenu = false;
+    public bool inMenu = true;
 
     // Start is called before the first frame update
     void Start()
@@ -67,7 +67,7 @@ public class Navigation : MonoBehaviour
     private void menuStateChanger(){
         if(secondaryPrimaryButton && !prevSecondaryButton)
         {
-            inMenu = !inMenu;
+            //inMenu = !inMenu;
             menuParent.SetActive(inMenu);
         }
 

@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class OnHoverInteractable : XRBaseInteractable
 {
-    public bool selected = true;
+    public bool selected = false;
     private Outline outline;
 
     // Start is called before the first frame update
