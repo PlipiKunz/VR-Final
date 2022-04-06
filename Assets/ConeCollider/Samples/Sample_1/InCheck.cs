@@ -7,6 +7,7 @@ public class InCheck : MonoBehaviour {
 
     private Text text;
     public List<GameObject> ConeCollisions;
+    // public List<GameObject> ConeCollisionDuplicates;
     public GameObject Marker;
     public Vector3 sumPositions;
     public Vector3 averagePos = new Vector3(-100,-100, - 100);
@@ -53,6 +54,11 @@ public class InCheck : MonoBehaviour {
     {
         if(other.gameObject.tag == "Selectable" && !ConeCollisions.Contains(other.gameObject)) {
             ConeCollisions.Add(other.gameObject);
+            // GameObject duplicate = Instantiate(other.gameObject);
+            // duplicate.AddComponent<MoveCopyToPlayer>();
+            // duplicate.transform.position = other.gameObject.transform.position;
+            // duplicate.tag = "Untagged";
+            // ConeCollisionDuplicates.Add(duplicate);
             if(other.gameObject.TryGetComponent(out Rigidbody temp)){
                 temp.useGravity = false;
                 temp.velocity = Vector3.zero;
