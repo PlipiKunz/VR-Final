@@ -26,11 +26,16 @@ public class Navigation : MonoBehaviour
     private bool prevSecondaryButton = false;
     public GameObject menuParent;
 
+    public bool inMenu = false;
+
     // Start is called before the first frame update
     void Start()
     {
         character = GetComponent<CharacterController>();
         rig = GetComponent<XROrigin>();
+
+
+        menuParent.SetActive(inMenu);
     }
 
     // Update is called once per frame
@@ -47,14 +52,23 @@ public class Navigation : MonoBehaviour
 
     private void FixedUpdate()
     {
-        horizontalMove();
-        verticalMove();
-        menuUpdate();
+        if (inMenu)
+        {
+            //menu code handeling
+        }
+        else
+        {
+            horizontalMove();
+            verticalMove();
+        }
+        menuStateChanger();
     }
 
-    private void menuUpdate(){
-        if(secondaryPrimaryButton && !prevSecondaryButton){
-            menuParent.SetActive(!menuParent.activeSelf);
+    private void menuStateChanger(){
+        if(secondaryPrimaryButton && !prevSecondaryButton)
+        {
+            inMenu = !inMenu;
+            menuParent.SetActive(inMenu);
         }
 
         prevSecondaryButton = secondaryPrimaryButton;
