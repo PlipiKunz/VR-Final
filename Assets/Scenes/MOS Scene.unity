@@ -697,6 +697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -706,6 +707,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &189241915
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,6 +822,7 @@ MonoBehaviour:
   - {fileID: 404684511}
   - {fileID: 1076437164}
   - {fileID: 655941552}
+  palettePos: 
   ScatterGather: 0
 --- !u!1 &204707792
 GameObject:
@@ -1070,6 +1073,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -1079,6 +1083,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &344604012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,6 +1599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -1603,6 +1609,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &375789437
 GameObject:
   m_ObjectHideFlags: 0
@@ -1820,6 +1827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -1829,6 +1837,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &441150279
 GameObject:
   m_ObjectHideFlags: 0
@@ -2151,6 +2160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -2160,6 +2170,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &501169436
 GameObject:
   m_ObjectHideFlags: 0
@@ -2645,6 +2656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -2654,6 +2666,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &614288553
 GameObject:
   m_ObjectHideFlags: 0
@@ -2829,6 +2842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -2838,6 +2852,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &655941552
 GameObject:
   m_ObjectHideFlags: 0
@@ -3118,6 +3133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -3127,6 +3143,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &754153897
 GameObject:
   m_ObjectHideFlags: 0
@@ -3444,6 +3461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -3453,6 +3471,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &910310220
 GameObject:
   m_ObjectHideFlags: 0
@@ -3580,6 +3599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -3589,6 +3609,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &959922919
 GameObject:
   m_ObjectHideFlags: 0
@@ -3765,6 +3786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -3774,29 +3796,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
---- !u!1 &977640889 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -6345285779419725671, guid: dcde590b3bbaa9e47b0a3396a233b0cc, type: 3}
-  m_PrefabInstance: {fileID: 2022477719}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &977640893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 977640889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
+  rbDuplicate: {fileID: 0}
 --- !u!1 &1051493073
 GameObject:
   m_ObjectHideFlags: 0
@@ -3924,6 +3924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -3933,6 +3934,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &1076437164
 GameObject:
   m_ObjectHideFlags: 0
@@ -4090,6 +4092,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -4099,6 +4102,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &1095193796
 GameObject:
   m_ObjectHideFlags: 0
@@ -4286,6 +4290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -4295,6 +4300,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &1213318186
 GameObject:
   m_ObjectHideFlags: 0
@@ -4422,6 +4428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -4431,6 +4438,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &1241777156
 GameObject:
   m_ObjectHideFlags: 0
@@ -4558,6 +4566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -4567,6 +4576,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &1278670435
 GameObject:
   m_ObjectHideFlags: 0
@@ -5029,7 +5039,7 @@ Transform:
   m_GameObject: {fileID: 1372233216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.409393, y: -7.76, z: -26.676884}
-  m_LocalScale: {x: 9.21, y: 1, z: 11.19}
+  m_LocalScale: {x: 44.75, y: 1, z: 67.42}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -5191,6 +5201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -5200,6 +5211,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &1433237150 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7615288812736499536, guid: 997a844a1b782ac4cb173d1a1811d514, type: 3}
@@ -5405,6 +5417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -5414,6 +5427,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &1528853381
 GameObject:
   m_ObjectHideFlags: 0
@@ -5541,6 +5555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -5550,6 +5565,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &1586400609
 GameObject:
   m_ObjectHideFlags: 0
@@ -5677,6 +5693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -5686,6 +5703,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &1589794407
 GameObject:
   m_ObjectHideFlags: 0
@@ -5950,6 +5968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -5959,6 +5978,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &1673919368
 GameObject:
   m_ObjectHideFlags: 0
@@ -6101,7 +6121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1584505593c3a64dbe70abc60ba6d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
 --- !u!114 &1690994650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6380,6 +6399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -6389,6 +6409,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &1831946967
 GameObject:
   m_ObjectHideFlags: 0
@@ -6516,6 +6537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -6525,6 +6547,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &1833987221
 GameObject:
   m_ObjectHideFlags: 0
@@ -6652,6 +6675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -6661,6 +6685,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &1846912403
 GameObject:
   m_ObjectHideFlags: 0
@@ -6818,6 +6843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -6827,6 +6853,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &1909676143
 GameObject:
   m_ObjectHideFlags: 0
@@ -7079,6 +7106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -7088,6 +7116,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &1958545952
 GameObject:
   m_ObjectHideFlags: 0
@@ -7275,6 +7304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -7284,6 +7314,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &1998638104
 GameObject:
   m_ObjectHideFlags: 0
@@ -7556,6 +7587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   target: {fileID: 0}
+  palettePosNum: 0
   inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
@@ -7565,6 +7597,7 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
+  rbDuplicate: {fileID: 0}
 --- !u!1 &2082108538
 GameObject:
   m_ObjectHideFlags: 0
