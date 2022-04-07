@@ -7,6 +7,7 @@ public class MoveCopyToPlayer : MonoBehaviour
 {
     public float speed;
     public Transform target;
+    public int palettePosNum;
     public InCheck inCheck;
     public bool copyExists = false;
     private GameObject duplicate;
@@ -32,9 +33,9 @@ public class MoveCopyToPlayer : MonoBehaviour
         if (inCheck.ConeCollisions.Contains(gameObject))
         {
             // create copy if copy doesn't exist
-            if (!copyExists)
+            if (!copyExists && inCheck.palettePos.Count > 0)
             {
-                Debug.Log("I am duplicating" + gameObject.name);
+                Debug.Log("I am duplicating" + gameObject.name + inCheck.palettePos.Count.ToString());
                 rb.velocity = new Vector3(0, 0, 0);
                 rb.isKinematic = false;
                 rb.useGravity = false;

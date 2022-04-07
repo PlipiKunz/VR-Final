@@ -18,6 +18,7 @@ public class OnHoverInteractable : XRGrabInteractable
     // Start is called before the first frame update
     void Start()
     {
+        selected = false;
         toBeDestroyed = false;
         grabbed = false;
         Color c = gameObject.GetComponent<MeshRenderer>().material.color;
@@ -52,9 +53,11 @@ public class OnHoverInteractable : XRGrabInteractable
 
     protected override void OnHoverEntered(HoverEnterEventArgs args)
     {
+        //GetComponent<MoveCopyToPlayer>().parent.GetComponent<Rigidbody>().useGravity = false;
         selected = !selected;
         //if(primaryTrigger) Debug.Log("Poof");
         if(primaryTrigger) {
+            GetComponent<MoveCopyToPlayer>().inCheck.palettePos.Add(GetComponent<MoveCopyToPlayer>().palettePosNum);
             toBeDestroyed = true;
             gameObject.GetComponent<MoveCopyToPlayer>().inCheck.ConeCollisionDuplicates.Remove(gameObject);
         }
