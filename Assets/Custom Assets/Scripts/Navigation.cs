@@ -43,7 +43,6 @@ public class Navigation : MonoBehaviour
     {
         InputDevice primaryDevice = InputDevices.GetDeviceAtXRNode(PrimarySource);
         primaryDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out MovementAxis);
-        primaryDevice.TryGetFeatureValue(CommonUsages.triggerButton, out primaryTrigger);
 
         InputDevice secondaryDevice = InputDevices.GetDeviceAtXRNode(SecondarySource);
         secondaryDevice.TryGetFeatureValue(CommonUsages.primary2DAxisClick, out secondaryPrimaryButton);

@@ -26,44 +26,26 @@ public class InCheck : MonoBehaviour {
         ConeCollisions = new List<GameObject>();
         ConeCollisionDuplicates = new List<GameObject>();
         text.color = Color.red;
-        //Stack temp = new Stack();
-        // foreach(var ob in menuPositions){
-        //     temp.Push((GameObject)ob);
-        //     //Debug.Log(ob.name);
-        // }
-        // int c = temp.Count;
-        // for (int x = 0; x < c; x++){
-        //     GameObject Temp2 = (GameObject)temp.Pop();
-        //     menuPositionStack.Push(Temp2);
-        // }
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        //averagePos = Vector3.zero;
-        text.text = "";
-        sumPositions = Vector3.zero;
-        for(int x = 0; x < ConeCollisions.Count; x ++){
-            text.text += ConeCollisions[x].name + '\n';
-        }
+        if(ScatterGather != 0){
+            for(int x = 0; x < ConeCollisions.Count; x ++){
+                if (ConeCollisions[x].name != "XR Origin") sumPositions += ConeCollisions[x].transform.position;
+            }
+            averagePos = sumPositions / (ConeCollisions.Count);
+            // Marker.transform.position = averagePos;
 
-        for(int x = 0; x < ConeCollisions.Count; x ++){
-            if (ConeCollisions[x].name != "XR Origin") sumPositions += ConeCollisions[x].transform.position;
-        }
-        averagePos = sumPositions / (ConeCollisions.Count);
-        // Marker.transform.position = averagePos;
-        for(int x = 0; x < ConeCollisions.Count; x ++){
-            if (ConeCollisions[x].name != "XR Origin") 
-            {
-                Vector3 Temp = averagePos - ConeCollisions[x].transform.position;
-                Temp = Temp * ScatterGather * Time.deltaTime;
-                ConeCollisions[x].transform.position += Temp;
+            for(int x = 0; x < ConeCollisions.Count; x ++){
+                if (ConeCollisions[x].name != "XR Origin") 
+                {
+                    Vector3 Temp = averagePos - ConeCollisions[x].transform.position;
+                    Temp = Temp * ScatterGather * Time.deltaTime;
+                    ConeCollisions[x].transform.position += Temp;
+                }
             }
         }
-        
-
-
-
 	}
 
     void OnTriggerEnter(Collider other)
@@ -80,7 +62,7 @@ public class InCheck : MonoBehaviour {
                 temp.velocity = Vector3.zero;
             }
         }
-        if(other.gameObject.tag == "Duplicate" && !ConeCollisionDuplicates.Contains(other.gameObject)) {
+        if(other.gameObject.tag == "Duplicate" && !ConeCollisionDuplicates.Contains(other.gameObject) && counter < 20) {
             other.gameObject.GetComponent<MoveCopyToPlayer>().target = menuPositions[counter].transform;
             other.gameObject.transform.localScale = other.gameObject.transform.localScale/10;
             float scaleMagnitude = other.gameObject.transform.localScale.magnitude;
