@@ -18,6 +18,8 @@ public class MenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        
         foreach(GameObject ob in cone.GetComponent<InCheck>().ConeCollisionDuplicates){
             if(ob.GetComponent<OnHoverInteractable>().selected){
                 
@@ -26,13 +28,13 @@ public class MenuScript : MonoBehaviour
         
         // // Manipulate current minis here
 
-        foreach(GameObject ob in cone.GetComponent<InCheck>().ConeCollisionDuplicates){
-            if(!ob.GetComponent<OnHoverInteractable>().toBeDestroyed) {
-                futureMinis.Add(ob);
-            }
-        }
+        // foreach(GameObject ob in cone.GetComponent<InCheck>().ConeCollisionDuplicates){
+        //     if(!ob.GetComponent<OnHoverInteractable>().toBeDestroyed) {
+        //         futureMinis.Add(ob);
+        //     }
+        // }
 
-        cone.GetComponent<InCheck>().ConeCollisionDuplicates = futureMinis;
-        futureMinis.Clear();
+        // cone.GetComponent<InCheck>().ConeCollisionDuplicates = futureMinis;
+        // futureMinis.Clear();
     }
 }

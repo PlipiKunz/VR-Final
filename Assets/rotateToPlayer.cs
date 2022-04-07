@@ -30,9 +30,4 @@ public class rotateToPlayer : XRGrabInteractable
         selected = false;
         base.Drop();
     }
-
-        protected override void OnHoverEntered(HoverEnterEventArgs args)
-    {
-        selected = !selected;
-    }
 }

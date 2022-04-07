@@ -14,11 +14,15 @@ public class MoveCopyToPlayer : MonoBehaviour
     public bool inMenu = false;
     public GameObject parent;
     public GameObject menu;
-
+    public bool grabbed;
+    public Vector3 initialPos;
     public Rigidbody rb;
+    public Rigidbody rbDuplicate;
+
     // Start is called before the first frame update
     void Start()
     {
+        grabbed = false;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -30,6 +34,7 @@ public class MoveCopyToPlayer : MonoBehaviour
             // create copy if copy doesn't exist
             if (!copyExists)
             {
+                Debug.Log("I am duplicating" + gameObject.name);
                 rb.velocity = new Vector3(0, 0, 0);
                 rb.isKinematic = false;
                 rb.useGravity = false;
@@ -40,7 +45,7 @@ public class MoveCopyToPlayer : MonoBehaviour
                 duplicateScript.iAmCopy = true;
                 duplicateScript.parent = gameObject;
                 duplicate.AddComponent<OnHoverInteractable>();
-                rb = duplicate.GetComponent<Rigidbody>();
+                rbDuplicate = duplicate.GetComponent<Rigidbody>();
                 copyExists = true;
             }
             
@@ -56,6 +61,7 @@ public class MoveCopyToPlayer : MonoBehaviour
             // {
             //     gameObject.SetActive(true);
             // }
+            //Rigidbody myRB = GetComponent<Rigidbody>();
             rb.velocity = new Vector3(0, 0, 0);
             rb.isKinematic = false;
             rb.useGravity = false;
@@ -82,5 +88,8 @@ public class MoveCopyToPlayer : MonoBehaviour
             }
         }
         
+    }
+    public void setInitialPos(){
+        initialPos = transform.position;
     }
 }

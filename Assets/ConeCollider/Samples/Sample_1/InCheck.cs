@@ -14,7 +14,7 @@ public class InCheck : MonoBehaviour {
     public List<GameObject> menuPositions;
     //private Stack menuPositionStack;
     private int counter = 0;
-    [Range(-1.0f, 1.0f)] public float ScatterGather = 1;
+    [Range(-4.0f, 4.0f)] public float ScatterGather = 1;
 
     void Awake()
     {
@@ -31,18 +31,22 @@ public class InCheck : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if(ScatterGather != 0){
-            for(int x = 0; x < ConeCollisions.Count; x ++){
-                if (ConeCollisions[x].name != "XR Origin") sumPositions += ConeCollisions[x].transform.position;
+            sumPositions = Vector3.zero;
+            int c = 0;
+            for(int x = 0; x < ConeCollisionDuplicates.Count; x ++){
+                if(ConeCollisionDuplicates[x].GetComponent<OnHoverInteractable>().selected) {
+                    sumPositions += ConeCollisionDuplicates[x].GetComponent<MoveCopyToPlayer>().parent.transform.position;
+                    c++;
+                }
             }
-            averagePos = sumPositions / (ConeCollisions.Count);
+            averagePos = sumPositions / (c);
             // Marker.transform.position = averagePos;
 
-            for(int x = 0; x < ConeCollisions.Count; x ++){
-                if (ConeCollisions[x].name != "XR Origin") 
-                {
-                    Vector3 Temp = averagePos - ConeCollisions[x].transform.position;
+            for(int x = 0; x < ConeCollisionDuplicates.Count; x ++){
+                if(ConeCollisionDuplicates[x].GetComponent<OnHoverInteractable>().selected) {
+                    Vector3 Temp = averagePos - ConeCollisionDuplicates[x].GetComponent<MoveCopyToPlayer>().parent.transform.position;
                     Temp = Temp * ScatterGather * Time.deltaTime;
-                    ConeCollisions[x].transform.position += Temp;
+                    ConeCollisionDuplicates[x].GetComponent<MoveCopyToPlayer>().parent.transform.position += Temp;
                 }
             }
         }
@@ -84,7 +88,7 @@ public class InCheck : MonoBehaviour {
     void OnTriggerExit(Collider other)
     {
         // text.text = "OUT";
-        //ConeCollisions.Remove(other.gameObject);
+        ConeCollisions.Remove(other.gameObject);
         if(other.gameObject.TryGetComponent(out Rigidbody temp)){
             temp.useGravity = true;
         }

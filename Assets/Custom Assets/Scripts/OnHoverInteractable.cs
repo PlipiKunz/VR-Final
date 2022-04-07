@@ -12,11 +12,14 @@ public class OnHoverInteractable : XRGrabInteractable
     private Outline outline;
     public XRNode primaryDevice;
     private bool primaryTrigger;
+    private Vector3 initialPos;
+    private bool grabbed;
 
     // Start is called before the first frame update
     void Start()
     {
         toBeDestroyed = false;
+        grabbed = false;
         Color c = gameObject.GetComponent<MeshRenderer>().material.color;
         c = Color.Lerp(c, Color.black, .8f);
 
@@ -34,7 +37,16 @@ public class OnHoverInteractable : XRGrabInteractable
 
         outline.enabled = selected;
         primaryDevice.TryGetFeatureValue(CommonUsages.triggerButton, out primaryTrigger);
-        if (toBeDestroyed) Destroy(gameObject);
+        if (toBeDestroyed) {
+            gameObject.GetComponent<MoveCopyToPlayer>().parent.GetComponent<MoveCopyToPlayer>().copyExists = false;
+            Destroy(gameObject);
+        }
+
+        if (grabbed){
+            Vector3 diff = transform.position - initialPos;
+            GetComponent<MoveCopyToPlayer>().parent.transform.position = GetComponent<MoveCopyToPlayer>().parent.GetComponent<MoveCopyToPlayer>().initialPos + diff * 10;
+        }
+
     }
 
 
@@ -42,12 +54,21 @@ public class OnHoverInteractable : XRGrabInteractable
     {
         selected = !selected;
         //if(primaryTrigger) Debug.Log("Poof");
-        if(primaryTrigger) toBeDestroyed = true;
+        if(primaryTrigger) {
+            toBeDestroyed = true;
+            gameObject.GetComponent<MoveCopyToPlayer>().inCheck.ConeCollisionDuplicates.Remove(gameObject);
+        }
     }
     protected override void Grab(){
+        selected = true;
+        initialPos = transform.position;
+        GetComponent<MoveCopyToPlayer>().parent.GetComponent<MoveCopyToPlayer>().grabbed = true;
+        GetComponent<MoveCopyToPlayer>().parent.GetComponent<MoveCopyToPlayer>().setInitialPos();
+        grabbed = true;
         base.Grab();
     }
     protected override void Drop(){
+        grabbed =  false;
         base.Drop();
     }
 
