@@ -11,11 +11,12 @@ public class OnHoverInteractable : XRGrabInteractable
     public bool toBeDestroyed;
     private Outline outline;
     public XRNode primaryDevice;
+    public XRNode secondaryDevice;
     private bool primaryTrigger;
+    private bool secondaryTrigger;
     private Vector3 initialPos;
     private bool grabbed;
 
-    // Start is called before the first frame update
     void Start()
     {
         selected = false;
@@ -31,13 +32,14 @@ public class OnHoverInteractable : XRGrabInteractable
         outline.OutlineWidth = 8f;
     }
 
-    // Update is called once per frame
     void Update()
     {
         InputDevice primaryDevice = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+        InputDevice secondaryDevice = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
 
         outline.enabled = selected;
         primaryDevice.TryGetFeatureValue(CommonUsages.triggerButton, out primaryTrigger);
+        secondaryDevice.TryGetFeatureValue(CommonUsages.triggerButton, out secondaryTrigger);
         if (toBeDestroyed) {
             gameObject.GetComponent<MoveCopyToPlayer>().parent.GetComponent<MoveCopyToPlayer>().copyExists = false;
             Destroy(gameObject);
@@ -47,16 +49,20 @@ public class OnHoverInteractable : XRGrabInteractable
             Vector3 diff = transform.position - initialPos;
             GetComponent<MoveCopyToPlayer>().parent.transform.position = GetComponent<MoveCopyToPlayer>().parent.GetComponent<MoveCopyToPlayer>().initialPos + diff * 10;
         }
-
+        if(selected) {
+            GetComponent<MoveCopyToPlayer>().parent.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            GetComponent<MoveCopyToPlayer>().parent.GetComponent<Rigidbody>().useGravity = false;
+        }
+        else GetComponent<MoveCopyToPlayer>().parent.GetComponent<Rigidbody>().useGravity = true;
     }
 
 
     protected override void OnHoverEntered(HoverEnterEventArgs args)
     {
         //GetComponent<MoveCopyToPlayer>().parent.GetComponent<Rigidbody>().useGravity = false;
-        selected = !selected;
+        if (primaryTrigger) selected = !selected;
         //if(primaryTrigger) Debug.Log("Poof");
-        if(primaryTrigger) {
+        if(secondaryTrigger) {
             GetComponent<MoveCopyToPlayer>().inCheck.palettePos.Add(GetComponent<MoveCopyToPlayer>().palettePosNum);
             toBeDestroyed = true;
             gameObject.GetComponent<MoveCopyToPlayer>().inCheck.ConeCollisionDuplicates.Remove(gameObject);

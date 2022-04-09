@@ -7,14 +7,18 @@ using System.Linq;
 public class InCheck : MonoBehaviour {
 
     private Text text;
-    public List<GameObject> ConeCollisions;
-    public List<GameObject> ConeCollisionDuplicates;
+
     public GameObject Marker;
     public Vector3 sumPositions;
     public Vector3 averagePos = new Vector3(-100,-100, - 100);
-    public List<GameObject> menuPositions;
-    //private Stack menuPositionStack;
     public List<int> palettePos;
+    public List<GameObject> removeConeWhenLookedAtList;
+    private int lookedAtObjectCount;
+    public ConeCollider cone;
+    public List<GameObject> ConeCollisions;
+    public List<GameObject> ConeCollisionDuplicates;
+    public List<GameObject> menuPositions;
+
     [Range(-4.0f, 4.0f)] public float ScatterGather = 1;
 
     void Awake()
@@ -24,7 +28,8 @@ public class InCheck : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        
+        lookedAtObjectCount = 0;
+        cone = GetComponent<ConeCollider>();
         foreach (int index in Enumerable.Range(0, 20))
         {
             palettePos.Add(index);
@@ -36,6 +41,9 @@ public class InCheck : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (lookedAtObjectCount > 0) cone.enabled = false;
+        else cone.enabled = true;
+        
         if(ScatterGather != 0){
             sumPositions = Vector3.zero;
             int c = 0;
@@ -60,6 +68,10 @@ public class InCheck : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.name);
+        foreach(GameObject ob in removeConeWhenLookedAtList){
+            if (other.gameObject.name == ob.name) lookedAtObjectCount++;
+        }
         if(other.gameObject.tag == "Selectable" && !ConeCollisions.Contains(other.gameObject)) {
             ConeCollisions.Add(other.gameObject);
             // GameObject duplicate = Instantiate(other.gameObject);
@@ -67,10 +79,10 @@ public class InCheck : MonoBehaviour {
             // duplicate.transform.position = other.gameObject.transform.position;
             // duplicate.tag = "Untagged";
             // ConeCollisionDuplicates.Add(duplicate);
-            if(other.gameObject.TryGetComponent(out Rigidbody temp)){
-                temp.useGravity = false;
-                temp.velocity = Vector3.zero;
-            }
+            // if(other.gameObject.TryGetComponent(out Rigidbody temp)){
+            //     temp.useGravity = false;
+            //     temp.velocity = Vector3.zero;
+            // }
         }
         if(other.gameObject.tag == "Duplicate" && !ConeCollisionDuplicates.Contains(other.gameObject) && palettePos.Count > 0) {
             palettePos.Sort();
@@ -96,6 +108,9 @@ public class InCheck : MonoBehaviour {
     void OnTriggerExit(Collider other)
     {
         // text.text = "OUT";
+        foreach(GameObject ob in removeConeWhenLookedAtList){
+            if (other.gameObject.name == ob.name) lookedAtObjectCount--;
+        }
         ConeCollisions.Remove(other.gameObject);
         if(other.gameObject.TryGetComponent(out Rigidbody temp)){
             temp.useGravity = true;

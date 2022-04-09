@@ -26,6 +26,7 @@ public class MenuScript : MonoBehaviour
             }
         }
         
+        
         // // Manipulate current minis here
 
         // foreach(GameObject ob in cone.GetComponent<InCheck>().ConeCollisionDuplicates){

@@ -40,6 +40,7 @@ public class MoveCopyToPlayer : MonoBehaviour
                 rb.isKinematic = false;
                 rb.useGravity = false;
                 duplicate = Instantiate(gameObject,transform.position,transform.rotation);
+                duplicate.layer = 7;
                 duplicate.tag = "Duplicate";
                 var duplicateScript = duplicate.GetComponent<MoveCopyToPlayer>();
                 duplicateScript.copyExists = true;
@@ -54,15 +55,11 @@ public class MoveCopyToPlayer : MonoBehaviour
 
         if (iAmCopy)
         {
-            // if(!menu.activeSelf && inMenu) 
-            // {
-            //     gameObject.SetActive(false);
+            // if(target == null) {
+            //     GetComponent<MeshRenderer>().enabled = false;
+            //     transform.position = parent.transform.position;
             // }
-            // else 
-            // {
-            //     gameObject.SetActive(true);
-            // }
-            //Rigidbody myRB = GetComponent<Rigidbody>();
+            // else GetComponent<MeshRenderer>().enabled = true;
             rb.velocity = new Vector3(0, 0, 0);
             rb.isKinematic = false;
             rb.useGravity = false;
