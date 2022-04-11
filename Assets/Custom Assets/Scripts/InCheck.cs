@@ -18,7 +18,7 @@ public class InCheck : MonoBehaviour {
     public List<GameObject> ConeCollisions;
     public List<GameObject> ConeCollisionDuplicates;
     public List<GameObject> menuPositions;
-
+    public int moveSpeed;
     [Range(-4.0f, 4.0f)] public float ScatterGather = 1;
 
     void Awake()
@@ -28,6 +28,7 @@ public class InCheck : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        moveSpeed = 10;
         diff = Vector3.zero;
         lookedAtObjectCount = 0;
         cone = GetComponent<ConeCollider>();
@@ -46,7 +47,10 @@ public class InCheck : MonoBehaviour {
         if(diff != Vector3.zero){
             foreach(GameObject ob in ConeCollisionDuplicates){
                 Debug.Log(ob.name);
-                if(ob.GetComponent<OnHoverInteractable>().selected) ob.GetComponent<MoveCopyToPlayer>().parent.transform.position = ob.GetComponent<MoveCopyToPlayer>().parent.GetComponent<MoveCopyToPlayer>().initialPos + diff * 10;
+                if(ob.GetComponent<OnHoverInteractable>().selected) {
+                    var p = ob.GetComponent<MoveCopyToPlayer>().parent;
+                    p.transform.position = p.GetComponent<MoveCopyToPlayer>().initialPos + diff * moveSpeed;
+                }
             }
         }
 
@@ -107,10 +111,10 @@ public class InCheck : MonoBehaviour {
             // duplicate.transform.position = other.gameObject.transform.position;
             // duplicate.tag = "Untagged";
             // ConeCollisionDuplicates.Add(duplicate);
-            if(other.gameObject.TryGetComponent(out Rigidbody temp)){
-                temp.useGravity = false;
-                temp.velocity = Vector3.zero;
-            }
+            // if(other.gameObject.TryGetComponent(out Rigidbody temp)){
+            //     temp.useGravity = false;
+            //     temp.velocity = Vector3.zero;
+            // }
         }
     }
 
@@ -121,9 +125,9 @@ public class InCheck : MonoBehaviour {
             if (other.gameObject.name == ob.name) lookedAtObjectCount--;
         }
         ConeCollisions.Remove(other.gameObject);
-        if(other.gameObject.TryGetComponent(out Rigidbody temp)){
-            temp.useGravity = true;
-        }
+        // if(other.gameObject.TryGetComponent(out Rigidbody temp)){
+        //     temp.useGravity = true;
+        // }
 
     }
 }

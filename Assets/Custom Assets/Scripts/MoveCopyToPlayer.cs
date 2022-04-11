@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR;
 
 public class MoveCopyToPlayer : MonoBehaviour
 {
@@ -40,13 +42,13 @@ public class MoveCopyToPlayer : MonoBehaviour
                 rb.isKinematic = false;
                 rb.useGravity = false;
                 duplicate = Instantiate(gameObject,transform.position,transform.rotation);
+                Destroy(duplicate.GetComponent<XRGrabInteractable>());
                 duplicate.layer = 7;
                 duplicate.tag = "Duplicate";
                 var duplicateScript = duplicate.GetComponent<MoveCopyToPlayer>();
                 duplicateScript.copyExists = true;
                 duplicateScript.iAmCopy = true;
                 duplicateScript.parent = gameObject;
-                duplicate.AddComponent<OnHoverInteractable>();
                 rbDuplicate = duplicate.GetComponent<Rigidbody>();
                 copyExists = true;
             }
@@ -76,6 +78,7 @@ public class MoveCopyToPlayer : MonoBehaviour
                     if (transform.position == target.position)
                     {
                         inMenu = true;
+                        gameObject.AddComponent<OnHoverInteractable>();
                     }
                     else
                     {
