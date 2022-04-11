@@ -82,13 +82,6 @@ public class Navigation : MonoBehaviour
 
     private void verticalMove()
     {
-        //if the jump button has been pressed and cur falling speed equals gravity speed
-        // if (secondaryPrimaryButton && curFallingSpeed == gravitySpeed)
-        // {
-        //     //jump
-        //     curFallingSpeed = jumpSpeed;
-        // }
-        //fall
         curFallingSpeed += Time.fixedDeltaTime * gravitySpeed;
         curFallingSpeed = Mathf.Clamp(curFallingSpeed, gravitySpeed, jumpSpeed);
 

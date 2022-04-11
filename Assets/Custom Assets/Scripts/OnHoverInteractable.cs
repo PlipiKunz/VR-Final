@@ -47,7 +47,8 @@ public class OnHoverInteractable : XRGrabInteractable
 
         if (grabbed){
             Vector3 diff = transform.position - initialPos;
-            GetComponent<MoveCopyToPlayer>().parent.transform.position = GetComponent<MoveCopyToPlayer>().parent.GetComponent<MoveCopyToPlayer>().initialPos + diff * 10;
+            GetComponent<MoveCopyToPlayer>().inCheck.diff = diff;
+            // GetComponent<MoveCopyToPlayer>().parent.transform.position = GetComponent<MoveCopyToPlayer>().parent.GetComponent<MoveCopyToPlayer>().initialPos + diff * 10;
         }
         if(selected) {
             GetComponent<MoveCopyToPlayer>().parent.GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -69,14 +70,22 @@ public class OnHoverInteractable : XRGrabInteractable
         }
     }
     protected override void Grab(){
+        GetComponent<MoveCopyToPlayer>().inCheck.lookedAtObjectCount++;
         selected = true;
         initialPos = transform.position;
         GetComponent<MoveCopyToPlayer>().parent.GetComponent<MoveCopyToPlayer>().grabbed = true;
-        GetComponent<MoveCopyToPlayer>().parent.GetComponent<MoveCopyToPlayer>().setInitialPos();
+        foreach(GameObject ob in GetComponent<MoveCopyToPlayer>().inCheck.ConeCollisionDuplicates){
+            ob.GetComponent<MoveCopyToPlayer>().parent.GetComponent<MoveCopyToPlayer>().setInitialPos();
+
+        }
         grabbed = true;
         base.Grab();
     }
     protected override void Drop(){
+        GetComponent<MoveCopyToPlayer>().inCheck.lookedAtObjectCount--;
+        GetComponent<MoveCopyToPlayer>().inCheck.diff = Vector3.zero;
+        GetComponent<MoveCopyToPlayer>().parent.GetComponent<MoveCopyToPlayer>().grabbed = false;
+
         grabbed =  false;
         base.Drop();
     }

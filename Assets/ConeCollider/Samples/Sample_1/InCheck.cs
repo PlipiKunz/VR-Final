@@ -7,13 +7,13 @@ using System.Linq;
 public class InCheck : MonoBehaviour {
 
     private Text text;
-
+    public Vector3 diff;
     public GameObject Marker;
     public Vector3 sumPositions;
     public Vector3 averagePos = new Vector3(-100,-100, - 100);
     public List<int> palettePos;
     public List<GameObject> removeConeWhenLookedAtList;
-    private int lookedAtObjectCount;
+    public int lookedAtObjectCount;
     public ConeCollider cone;
     public List<GameObject> ConeCollisions;
     public List<GameObject> ConeCollisionDuplicates;
@@ -28,6 +28,7 @@ public class InCheck : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        diff = Vector3.zero;
         lookedAtObjectCount = 0;
         cone = GetComponent<ConeCollider>();
         foreach (int index in Enumerable.Range(0, 20))
@@ -41,6 +42,14 @@ public class InCheck : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if(diff != Vector3.zero){
+            foreach(GameObject ob in ConeCollisionDuplicates){
+                Debug.Log(ob.name);
+                if(ob.GetComponent<OnHoverInteractable>().selected) ob.GetComponent<MoveCopyToPlayer>().parent.transform.position = ob.GetComponent<MoveCopyToPlayer>().parent.GetComponent<MoveCopyToPlayer>().initialPos + diff * 10;
+            }
+        }
+
         if (lookedAtObjectCount > 0) cone.enabled = false;
         else cone.enabled = true;
         
