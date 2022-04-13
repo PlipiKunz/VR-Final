@@ -3790,6 +3790,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: peach
       objectReference: {fileID: 0}
+    - target: {fileID: 1541859410316496, guid: 4fe5a7bcbee1651418ea031a87ff53e4, type: 3}
+      propertyPath: m_TagString
+      value: Selectable
+      objectReference: {fileID: 0}
     - target: {fileID: 4635515559360632, guid: 4fe5a7bcbee1651418ea031a87ff53e4, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -5340,15 +5344,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b036076ca7e25f9459f1ab66858c4ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 15
   target: {fileID: 0}
   palettePosNum: 0
-  inCheck: {fileID: 0}
+  inCheck: {fileID: 189241918}
   copyExists: 0
   iAmCopy: 0
   inMenu: 0
   parent: {fileID: 0}
-  menu: {fileID: 0}
+  menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}

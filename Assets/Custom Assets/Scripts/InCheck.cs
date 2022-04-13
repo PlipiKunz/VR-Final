@@ -6,7 +6,6 @@ using System.Linq;
 
 public class InCheck : MonoBehaviour {
 
-    private Text text;
     public Vector3 diff;
     public GameObject Marker;
     public Vector3 sumPositions;
@@ -23,7 +22,6 @@ public class InCheck : MonoBehaviour {
 
     void Awake()
     {
-        text = GameObject.Find("Text").GetComponent<Text>();
     }
 
 	// Use this for initialization
@@ -38,7 +36,6 @@ public class InCheck : MonoBehaviour {
         }
         ConeCollisions = new List<GameObject>();
         ConeCollisionDuplicates = new List<GameObject>();
-        text.color = Color.red;
 	}
 	
 	// Update is called once per frame
@@ -120,7 +117,6 @@ public class InCheck : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
-        // text.text = "OUT";
         foreach(GameObject ob in removeConeWhenLookedAtList){
             if (other.gameObject.name == ob.name) lookedAtObjectCount--;
         }

@@ -64,6 +64,7 @@ public class OnHoverInteractable : XRGrabInteractable
         if (primaryTrigger) selected = !selected;
         //if(primaryTrigger) Debug.Log("Poof");
         if(secondaryTrigger) {
+            selected = false;
             GetComponent<MoveCopyToPlayer>().inCheck.palettePos.Add(GetComponent<MoveCopyToPlayer>().palettePosNum);
             toBeDestroyed = true;
             gameObject.GetComponent<MoveCopyToPlayer>().inCheck.ConeCollisionDuplicates.Remove(gameObject);
