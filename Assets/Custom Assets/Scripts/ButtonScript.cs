@@ -31,6 +31,6 @@ public class ButtonScript : XRGrabInteractable
     }
     protected override void Drop(){
         if (gameObject.name == "Gather Button") InCheck.ScatterGather = 0;
-        else if (gameObject.name == "Scatter Button") InCheck.ScatterGather = -3;
+        else if (gameObject.name == "Scatter Button") InCheck.ScatterGather = 0;
     }
 }
