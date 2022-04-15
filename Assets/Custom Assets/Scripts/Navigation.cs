@@ -26,6 +26,7 @@ public class Navigation : MonoBehaviour
     private bool prevSecondaryButton = false;
     public GameObject menuParent;
 
+    public bool menuable = false;
     public static bool inMenu = true;
 
     // Start is called before the first frame update
@@ -34,7 +35,10 @@ public class Navigation : MonoBehaviour
         character = GetComponent<CharacterController>();
         rig = GetComponent<XROrigin>();
 
-        menuParent.SetActive(inMenu);
+        if (menuable)
+        {
+            menuParent.SetActive(inMenu);
+        }
     }
 
     // Update is called once per frame
@@ -50,7 +54,7 @@ public class Navigation : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (inMenu)
+        if (inMenu && menuable)
         {
             //menu code handeling
         }
@@ -59,7 +63,11 @@ public class Navigation : MonoBehaviour
             horizontalMove();
             verticalMove();
         }
-        menuStateChanger();
+
+        if (menuable)
+        {
+            menuStateChanger();
+        }
     }
 
     private void menuStateChanger(){

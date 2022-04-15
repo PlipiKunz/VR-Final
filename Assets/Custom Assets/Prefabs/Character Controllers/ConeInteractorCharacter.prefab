@@ -4546,6 +4546,7 @@ MonoBehaviour:
   gravitySpeed: -9.81
   jumpSpeed: 5
   menuParent: {fileID: 959922919}
+  menuable: 1
 --- !u!143 &1111703999573128173
 CharacterController:
   m_ObjectHideFlags: 0

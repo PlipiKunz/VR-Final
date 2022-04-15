@@ -369,6 +369,7 @@ MonoBehaviour:
   gravitySpeed: -9.81
   jumpSpeed: 5
   menuParent: {fileID: 0}
+  menuable: 0
 --- !u!143 &1111703999573128173
 CharacterController:
   m_ObjectHideFlags: 0
@@ -420,7 +421,7 @@ MonoBehaviour:
   m_EnableTurnAround: 1
   m_TurnUsage: 0
   m_Controllers:
-  - {fileID: 0}
+  - {fileID: 4653301963789680283}
   m_DeadZone: 0.75
 --- !u!1 &6329181189645486373
 GameObject:
