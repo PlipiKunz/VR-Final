@@ -2136,14 +2136,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959922919}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.34399983, y: 1.1100001, z: 0.47900018}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 352525305}
   - {fileID: 1678762566}
   - {fileID: 821430274}
-  m_Father: {fileID: 5432023839654364110}
-  m_RootOrder: 1
+  m_Father: {fileID: 6001258479517087426}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &970620722
 GameObject:
@@ -3820,7 +3820,7 @@ GameObject:
   - component: {fileID: 1811519494}
   - component: {fileID: 1811519496}
   - component: {fileID: 1811519495}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: LeftText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4095,7 +4095,7 @@ GameObject:
   - component: {fileID: 2041267771}
   - component: {fileID: 2041267773}
   - component: {fileID: 2041267772}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: RightText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4297,7 +4297,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6001258479517087426}
-  - {fileID: 959922920}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4313,7 +4312,7 @@ GameObject:
   - component: {fileID: 3454065812777345226}
   - component: {fileID: 6176223659048036143}
   - component: {fileID: 4009715230827431052}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -4475,7 +4474,7 @@ GameObject:
   - component: {fileID: 1111703999573128173}
   - component: {fileID: 2170073075047886017}
   - component: {fileID: 3879609493765343627}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4493,6 +4492,7 @@ Transform:
   m_LocalPosition: {x: 0.344, y: 1.11, z: 0.479}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 959922920}
   - {fileID: 6176914239618810987}
   m_Father: {fileID: 5432023839654364110}
   m_RootOrder: 0
@@ -4612,7 +4612,7 @@ GameObject:
   - component: {fileID: 726904658612263262}
   - component: {fileID: 7425577241037142320}
   - component: {fileID: 644395382}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4769,7 +4769,7 @@ GameObject:
   - component: {fileID: 3187329509029847381}
   - component: {fileID: 8795982887027253733}
   - component: {fileID: 1433237152}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: RightHand Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4926,7 +4926,7 @@ GameObject:
   - component: {fileID: 7282741256645221023}
   - component: {fileID: 4949794080910012056}
   - component: {fileID: 2446541186342127100}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5018,7 +5018,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6176914239618810987}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Camera Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5040,7 +5040,7 @@ Transform:
   - {fileID: 5248016829431175986}
   - {fileID: 6811524485390134695}
   m_Father: {fileID: 6001258479517087426}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9118024964067860184
 GameObject:
@@ -5054,7 +5054,7 @@ GameObject:
   - component: {fileID: 3688963631750775296}
   - component: {fileID: 3928610333932761441}
   - component: {fileID: 817092767458144738}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5144,6 +5144,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7825601666950227429}
     m_Modifications:
+    - target: {fileID: 1300242302035366, guid: 95145ad4fe8448d4ebdcf3760752e2e5, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1300242302035366, guid: 95145ad4fe8448d4ebdcf3760752e2e5, type: 3}
       propertyPath: m_IsActive
       value: 1

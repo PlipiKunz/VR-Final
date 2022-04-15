@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3454065812777345226}
   - component: {fileID: 6176223659048036143}
   - component: {fileID: 4009715230827431052}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 1111703999573128173}
   - component: {fileID: 2170073075047886017}
   - component: {fileID: 3879609493765343627}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,6 +243,7 @@ MonoBehaviour:
   gravitySpeed: -9.81
   jumpSpeed: 5
   menuParent: {fileID: 0}
+  menuable: 0
 --- !u!143 &1111703999573128173
 CharacterController:
   m_ObjectHideFlags: 0
@@ -339,7 +340,7 @@ GameObject:
   - component: {fileID: 726904658612263262}
   - component: {fileID: 7425577241037142320}
   - component: {fileID: 3588985016487493205}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -495,7 +496,7 @@ GameObject:
   - component: {fileID: 3187329509029847381}
   - component: {fileID: 8795982887027253733}
   - component: {fileID: 6249878760362890901}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: RightHand Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -651,7 +652,7 @@ GameObject:
   - component: {fileID: 7282741256645221023}
   - component: {fileID: 4949794080910012056}
   - component: {fileID: 2446541186342127100}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -743,7 +744,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6176914239618810987}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Camera Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -779,7 +780,7 @@ GameObject:
   - component: {fileID: 3688963631750775296}
   - component: {fileID: 3928610333932761441}
   - component: {fileID: 817092767458144738}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

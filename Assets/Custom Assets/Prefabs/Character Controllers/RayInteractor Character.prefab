@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 3769827192662118091}
   - component: {fileID: 6376170907367095885}
   - component: {fileID: 6109354217177090190}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 3454065812777345226}
   - component: {fileID: 6176223659048036143}
   - component: {fileID: 4009715230827431052}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 1111703999573128173}
   - component: {fileID: 2170073075047886017}
   - component: {fileID: 3879609493765343627}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 134019227158733657}
   - component: {fileID: 3011409143239089832}
   - component: {fileID: 4653301963789680283}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: RightHand Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -809,7 +809,7 @@ GameObject:
   - component: {fileID: 4275383482966600453}
   - component: {fileID: 6476467434747889908}
   - component: {fileID: 4829857619421288920}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1181,7 +1181,7 @@ GameObject:
   - component: {fileID: 7282741256645221023}
   - component: {fileID: 4949794080910012056}
   - component: {fileID: 2446541186342127100}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1273,7 +1273,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6176914239618810987}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Camera Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
