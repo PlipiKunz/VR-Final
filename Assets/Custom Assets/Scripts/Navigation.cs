@@ -25,6 +25,8 @@ public class Navigation : MonoBehaviour
 
     private bool prevSecondaryButton = false;
     public GameObject menuParent;
+    public InCheck inCheck;
+    public GameObject coneCollider;
 
     public bool menuable = false;
     public static bool inMenu = true;
@@ -74,6 +76,10 @@ public class Navigation : MonoBehaviour
         if(secondaryPrimaryButton && !prevSecondaryButton)
         {
             inMenu = !inMenu;
+            coneCollider.SetActive(inMenu);
+            foreach(GameObject g in inCheck.ConeCollisionDuplicates){
+                g.SetActive(inMenu);
+            }
             menuParent.SetActive(inMenu);
         }
 
