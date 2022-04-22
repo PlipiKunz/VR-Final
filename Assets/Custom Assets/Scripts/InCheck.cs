@@ -115,7 +115,7 @@ public class InCheck : MonoBehaviour {
             other.gameObject.GetComponent<MoveCopyToPlayer>().target = menuPositions[palettePos[0]].transform;
             other.gameObject.GetComponent<MoveCopyToPlayer>().palettePosNum = palettePos[0];
             palettePos.Remove(palettePos[0]);
-            other.gameObject.transform.localScale = other.gameObject.transform.localScale/10;
+            other.gameObject.transform.localScale = new Vector3(0.0354436189f,0.0354436189f,0.0354436189f);
             float scaleMagnitude = other.gameObject.transform.localScale.magnitude;
             Debug.Log($"This sphere is scaled to: {scaleMagnitude}");
             ConeCollisionDuplicates.Add(other.gameObject);

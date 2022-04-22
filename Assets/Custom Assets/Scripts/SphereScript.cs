@@ -10,12 +10,14 @@ public enum SphereColors {
 }
 public class SphereScript : MonoBehaviour
 {
+    public static System.Random r = new System.Random();
     //0 = white
-    public SphereColors sphereColor = SphereColors.white;
+    public SphereColors sphereColor;
 
     // Start is called before the first frame update
     void Start()
     {
+        sphereColor = (SphereColors)r.Next(0,4);
         var material = gameObject.GetComponent<Renderer>().material;
         switch (sphereColor) { 
             case SphereColors.white: {

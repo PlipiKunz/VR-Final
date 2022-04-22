@@ -10,13 +10,15 @@ public class MoveCopyToPlayer : MonoBehaviour
     public float speed;
     public Transform target;
     public int palettePosNum;
-    public InCheck inCheck;
     public bool copyExists = false;
     private GameObject duplicate;
     public bool iAmCopy = false;
     public bool inMenu = false;
+
     public GameObject parent;
+    public InCheck inCheck;
     public GameObject menu;
+
     public bool grabbed;
     public Vector3 initialPos;
     public Vector3 initialScale;
@@ -26,9 +28,16 @@ public class MoveCopyToPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        menu = GameObject.Find("menu");
+
+        Debug.Log(menu);
+        inCheck = GameObject.Find("Cone").GetComponent<InCheck>();
+
         initialScale = Vector3.zero;
         grabbed = false;
         rb = GetComponent<Rigidbody>();
+
+
     }
 
     // Update is called once per frame
@@ -45,6 +54,7 @@ public class MoveCopyToPlayer : MonoBehaviour
                 rb.useGravity = false;
                 duplicate = Instantiate(gameObject,transform.position,transform.rotation);
                 Destroy(duplicate.GetComponent<XRGrabInteractable>());
+                duplicate.GetComponent<Renderer>().material = GetComponent<Renderer>().material;
                 duplicate.layer = 7;
                 duplicate.tag = "Duplicate";
                 var duplicateScript = duplicate.GetComponent<MoveCopyToPlayer>();
