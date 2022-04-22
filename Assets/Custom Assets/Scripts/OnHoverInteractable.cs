@@ -16,9 +16,13 @@ public class OnHoverInteractable : XRGrabInteractable
     private bool secondaryTrigger;
     private Vector3 initialPos;
     private bool grabbed;
+    public bool primaryGrip;
+    public bool secondaryGrip;
 
     void Start()
     {
+        primaryGrip = false;
+        secondaryGrip = false;
         selected = false;
         toBeDestroyed = false;
         grabbed = false;
@@ -40,6 +44,8 @@ public class OnHoverInteractable : XRGrabInteractable
         outline.enabled = selected;
         primaryDevice.TryGetFeatureValue(CommonUsages.triggerButton, out primaryTrigger);
         secondaryDevice.TryGetFeatureValue(CommonUsages.triggerButton, out secondaryTrigger);
+        primaryDevice.TryGetFeatureValue(CommonUsages.gripButton, out primaryGrip);
+        secondaryDevice.TryGetFeatureValue(CommonUsages.gripButton, out secondaryGrip);
         if (toBeDestroyed) {
             gameObject.GetComponent<MoveCopyToPlayer>().parent.GetComponent<MoveCopyToPlayer>().copyExists = false;
             Destroy(gameObject);
@@ -48,8 +54,18 @@ public class OnHoverInteractable : XRGrabInteractable
         if (grabbed){
             Vector3 diff = transform.position - initialPos;
             GetComponent<MoveCopyToPlayer>().inCheck.diff = diff;
-            // GetComponent<MoveCopyToPlayer>().parent.transform.position = GetComponent<MoveCopyToPlayer>().parent.GetComponent<MoveCopyToPlayer>().initialPos + diff * 10;
         }
+        if (primaryGrip && secondaryGrip){
+            GetComponent<MoveCopyToPlayer>().inCheck.getScale();
+        }else{
+            GetComponent<MoveCopyToPlayer>().inCheck.hasInitialDistScale = false;
+            foreach(GameObject ob in GetComponent<MoveCopyToPlayer>().inCheck.ConeCollisionDuplicates){
+                ob.GetComponent<MoveCopyToPlayer>().parent.GetComponent<MoveCopyToPlayer>().setInitialScale();
+            }
+            GetComponent<MoveCopyToPlayer>().inCheck.scale = 0;
+
+        }
+        
         if(selected) {
             GetComponent<MoveCopyToPlayer>().parent.GetComponent<Rigidbody>().velocity = Vector3.zero;
             GetComponent<MoveCopyToPlayer>().parent.GetComponent<Rigidbody>().useGravity = false;
@@ -85,6 +101,7 @@ public class OnHoverInteractable : XRGrabInteractable
     protected override void Drop(){
         GetComponent<MoveCopyToPlayer>().inCheck.lookedAtObjectCount--;
         GetComponent<MoveCopyToPlayer>().inCheck.diff = Vector3.zero;
+        GetComponent<MoveCopyToPlayer>().inCheck.scale = 0;
         GetComponent<MoveCopyToPlayer>().parent.GetComponent<MoveCopyToPlayer>().grabbed = false;
 
         grabbed =  false;

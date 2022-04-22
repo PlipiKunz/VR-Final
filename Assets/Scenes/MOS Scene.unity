@@ -404,6 +404,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!114 &189241918 stripped
@@ -648,6 +649,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!114 &362675089
@@ -902,6 +904,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!114 &408890416
@@ -1256,6 +1259,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!114 &500005551
@@ -1553,6 +1557,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!114 &612166678
@@ -1826,6 +1831,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!114 &646651022
@@ -2173,6 +2179,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!114 &736442381
@@ -2432,6 +2439,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!114 &902192318
@@ -2686,6 +2694,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!114 &910310227
@@ -3060,6 +3069,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!1 &1051493073
@@ -3199,6 +3209,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!114 &1051493080
@@ -3453,6 +3464,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!114 &1095130683
@@ -3822,6 +3834,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!1 &1213318186
@@ -3961,6 +3974,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!114 &1213318193
@@ -4078,6 +4092,11 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!1 &1220248312 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7615288812736499536, guid: 997a844a1b782ac4cb173d1a1811d514, type: 3}
+  m_PrefabInstance: {fileID: 1337897989}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1241777156
 GameObject:
   m_ObjectHideFlags: 0
@@ -4215,6 +4234,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!114 &1241777163
@@ -4332,6 +4352,11 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!1 &1271828464 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7563219506673923263, guid: 997a844a1b782ac4cb173d1a1811d514, type: 3}
+  m_PrefabInstance: {fileID: 1337897989}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1322326334
 GameObject:
   m_ObjectHideFlags: 0
@@ -4406,6 +4431,14 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 567960472}
+    - target: {fileID: 189241918, guid: 997a844a1b782ac4cb173d1a1811d514, type: 3}
+      propertyPath: PrimaryHand
+      value: 
+      objectReference: {fileID: 1220248312}
+    - target: {fileID: 189241918, guid: 997a844a1b782ac4cb173d1a1811d514, type: 3}
+      propertyPath: SecondaryHand
+      value: 
+      objectReference: {fileID: 1271828464}
     - target: {fileID: 352525308, guid: 997a844a1b782ac4cb173d1a1811d514, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -4712,6 +4745,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!114 &1405260898
@@ -4966,6 +5000,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!114 &1526236567
@@ -5220,6 +5255,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!114 &1528853388
@@ -5589,6 +5625,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!1001 &1591730377
@@ -5805,6 +5842,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!114 &1652413065
@@ -6064,6 +6102,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!114 &1809037190
@@ -6318,6 +6357,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!114 &1831946974
@@ -6572,6 +6612,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!114 &1833987228
@@ -6826,6 +6867,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!114 &1878149869
@@ -7290,6 +7332,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!1 &1981104741
@@ -7544,6 +7587,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!1001 &2022477719
@@ -7768,6 +7812,7 @@ MonoBehaviour:
   menu: {fileID: 959922919}
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
+  initialScale: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
 --- !u!114 &2037772362

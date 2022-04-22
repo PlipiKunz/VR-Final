@@ -19,12 +19,14 @@ public class MoveCopyToPlayer : MonoBehaviour
     public GameObject menu;
     public bool grabbed;
     public Vector3 initialPos;
+    public Vector3 initialScale;
     public Rigidbody rb;
     public Rigidbody rbDuplicate;
 
     // Start is called before the first frame update
     void Start()
     {
+        initialScale = Vector3.zero;
         grabbed = false;
         rb = GetComponent<Rigidbody>();
     }
@@ -92,5 +94,8 @@ public class MoveCopyToPlayer : MonoBehaviour
     }
     public void setInitialPos(){
         initialPos = transform.position;
+    }
+    public void setInitialScale(){
+        initialScale = transform.localScale;
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 public class InCheck : MonoBehaviour {
 
     public Vector3 diff;
+    public float scale;
     public GameObject Marker;
     public Vector3 sumPositions;
     public Vector3 averagePos = new Vector3(-100,-100, - 100);
@@ -18,6 +19,11 @@ public class InCheck : MonoBehaviour {
     public List<GameObject> ConeCollisionDuplicates;
     public List<GameObject> menuPositions;
     public int moveSpeed;
+    public bool hasInitialDistScale;
+    public float initialDistanceScale;
+    public GameObject PrimaryHand;
+    public GameObject SecondaryHand;
+    
     [Range(-4.0f, 4.0f)] public float ScatterGather = 1;
 
     void Awake()
@@ -26,8 +32,10 @@ public class InCheck : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        hasInitialDistScale = false;
         moveSpeed = 10;
         diff = Vector3.zero;
+        scale = 0;
         lookedAtObjectCount = 0;
         cone = GetComponent<ConeCollider>();
         foreach (int index in Enumerable.Range(0, 20))
@@ -47,6 +55,14 @@ public class InCheck : MonoBehaviour {
                 if(ob.GetComponent<OnHoverInteractable>().selected) {
                     var p = ob.GetComponent<MoveCopyToPlayer>().parent;
                     p.transform.position = p.GetComponent<MoveCopyToPlayer>().initialPos + diff * moveSpeed;
+                }
+            }
+        }
+        if(scale != 0){
+            foreach(GameObject ob in ConeCollisionDuplicates){
+                if(ob.GetComponent<OnHoverInteractable>().selected) {
+                    var p = ob.GetComponent<MoveCopyToPlayer>().parent;
+                    p.transform.localScale = p.GetComponent<MoveCopyToPlayer>().initialScale + new Vector3(scale, scale, scale);
                 }
             }
         }
@@ -125,5 +141,13 @@ public class InCheck : MonoBehaviour {
         //     temp.useGravity = true;
         // }
 
+    }
+
+    public void getScale(){
+         if(!hasInitialDistScale){
+             initialDistanceScale = Vector3.Distance(PrimaryHand.transform.position, SecondaryHand.transform.position);
+             hasInitialDistScale = true;
+         }
+        scale = Vector3.Distance(PrimaryHand.transform.position, SecondaryHand.transform.position) - initialDistanceScale;
     }
 }
