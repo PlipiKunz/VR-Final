@@ -18,9 +18,11 @@ public class OnHoverInteractable : XRGrabInteractable
     private bool grabbed;
     public bool primaryGrip;
     public bool secondaryGrip;
+    bool changed;
 
     void Start()
     {
+        changed = false;
         primaryGrip = false;
         secondaryGrip = false;
         selected = false;
@@ -71,21 +73,28 @@ public class OnHoverInteractable : XRGrabInteractable
             GetComponent<MoveCopyToPlayer>().parent.GetComponent<Rigidbody>().useGravity = false;
         }
         else GetComponent<MoveCopyToPlayer>().parent.GetComponent<Rigidbody>().useGravity = true;
-    }
-
-
-    protected override void OnHoverEntered(HoverEnterEventArgs args)
-    {
-        //GetComponent<MoveCopyToPlayer>().parent.GetComponent<Rigidbody>().useGravity = false;
-        if (primaryTrigger) selected = !selected;
-        //if(primaryTrigger) Debug.Log("Poof");
-        if(secondaryTrigger) {
-            selected = false;
-            GetComponent<MoveCopyToPlayer>().inCheck.palettePos.Add(GetComponent<MoveCopyToPlayer>().palettePosNum);
-            toBeDestroyed = true;
-            gameObject.GetComponent<MoveCopyToPlayer>().inCheck.ConeCollisionDuplicates.Remove(gameObject);
+        if(!primaryTrigger){
+            changed = false;
         }
+        if(isHovered){
+            if (primaryTrigger && !changed) {
+                selected = !selected;
+                changed = true;
+            }
+            //if(primaryTrigger) Debug.Log("Poof");
+            if(secondaryTrigger) {
+                selected = false;
+                GetComponent<MoveCopyToPlayer>().inCheck.palettePos.Add(GetComponent<MoveCopyToPlayer>().palettePosNum);
+                toBeDestroyed = true;
+                gameObject.GetComponent<MoveCopyToPlayer>().inCheck.ConeCollisionDuplicates.Remove(gameObject);
+            }
+        }
+
     }
+
+
+
+
     protected override void Grab(){
         selected = true;
         initialPos = transform.position;

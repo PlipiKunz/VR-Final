@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR;
+using Unity.XR.CoreUtils;
 
 public class MoveCopyToPlayer : MonoBehaviour
 {
@@ -26,10 +27,13 @@ public class MoveCopyToPlayer : MonoBehaviour
     public Vector3 initialScale;
     public Rigidbody rb;
     public Rigidbody rbDuplicate;
+    public bool leftAxisTouch;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        leftAxisTouch = false;
         speed = 20f;
         hasFallen = false;
         fallAfter = 8f;
@@ -48,6 +52,8 @@ public class MoveCopyToPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        InputDevice secondaryDevice = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
+        secondaryDevice.TryGetFeatureValue(CommonUsages.primary2DAxisTouch, out leftAxisTouch);
         if(!hasFallen && fallAfter - Time.realtimeSinceStartup < 0){
             rb.useGravity = true;
             hasFallen = true;
@@ -59,7 +65,7 @@ public class MoveCopyToPlayer : MonoBehaviour
         if (inCheck.ConeCollisions.Contains(gameObject))
         {
             // create copy if copy doesn't exist
-            if (!copyExists && inCheck.palettePos.Count > 0 && inCheck.SelectedObjects == 0)
+            if (!copyExists && inCheck.palettePos.Count > 0 && inCheck.SelectedObjects == 0 && leftAxisTouch)
             {
                 inCheck.palettePos.Sort();
                 target = inCheck.menuPositions[inCheck.palettePos[0]].transform;
