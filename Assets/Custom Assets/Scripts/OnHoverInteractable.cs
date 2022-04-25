@@ -87,7 +87,6 @@ public class OnHoverInteractable : XRGrabInteractable
         }
     }
     protected override void Grab(){
-        GetComponent<MoveCopyToPlayer>().inCheck.lookedAtObjectCount++;
         selected = true;
         initialPos = transform.position;
         GetComponent<MoveCopyToPlayer>().parent.GetComponent<MoveCopyToPlayer>().grabbed = true;
@@ -99,7 +98,6 @@ public class OnHoverInteractable : XRGrabInteractable
         base.Grab();
     }
     protected override void Drop(){
-        GetComponent<MoveCopyToPlayer>().inCheck.lookedAtObjectCount--;
         GetComponent<MoveCopyToPlayer>().inCheck.diff = Vector3.zero;
         GetComponent<MoveCopyToPlayer>().inCheck.scale = 0;
         GetComponent<MoveCopyToPlayer>().parent.GetComponent<MoveCopyToPlayer>().grabbed = false;

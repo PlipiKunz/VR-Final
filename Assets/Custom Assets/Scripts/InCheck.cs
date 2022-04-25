@@ -33,7 +33,7 @@ public class InCheck : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         hasInitialDistScale = false;
-        moveSpeed = 10;
+        moveSpeed = 30;
         diff = Vector3.zero;
         scale = 0;
         lookedAtObjectCount = 0;
@@ -51,7 +51,7 @@ public class InCheck : MonoBehaviour {
 
         if(diff != Vector3.zero){
             foreach(GameObject ob in ConeCollisionDuplicates){
-                Debug.Log(ob.name);
+                //Debug.Log(ob.name);
                 if(ob.GetComponent<OnHoverInteractable>().selected) {
                     var p = ob.GetComponent<MoveCopyToPlayer>().parent;
                     p.transform.position = p.GetComponent<MoveCopyToPlayer>().initialPos + diff * moveSpeed;
@@ -66,9 +66,6 @@ public class InCheck : MonoBehaviour {
                 }
             }
         }
-
-        if (lookedAtObjectCount > 0) cone.enabled = false;
-        else cone.enabled = true;
         
         if(ScatterGather != 0){
             sumPositions = Vector3.zero;
@@ -94,9 +91,10 @@ public class InCheck : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
-        foreach(GameObject ob in removeConeWhenLookedAtList){
-            if (other.gameObject.name == ob.name) lookedAtObjectCount++;
+        //Debug.Log(other.name);
+        lookedAtObjectCount = 0;
+        foreach(GameObject ob in ConeCollisionDuplicates){
+            if (ob.GetComponent<OnHoverInteractable>() != null && ob.GetComponent<OnHoverInteractable>().selected) lookedAtObjectCount++;
         }
         if(other.gameObject.tag == "Selectable" && !ConeCollisions.Contains(other.gameObject)) {
             ConeCollisions.Add(other.gameObject);
@@ -110,14 +108,14 @@ public class InCheck : MonoBehaviour {
             //     temp.velocity = Vector3.zero;
             // }
         }
-        if(other.gameObject.tag == "Duplicate" && !ConeCollisionDuplicates.Contains(other.gameObject) && palettePos.Count > 0) {
-            palettePos.Sort();
-            other.gameObject.GetComponent<MoveCopyToPlayer>().target = menuPositions[palettePos[0]].transform;
-            other.gameObject.GetComponent<MoveCopyToPlayer>().palettePosNum = palettePos[0];
-            palettePos.Remove(palettePos[0]);
-            other.gameObject.transform.localScale = new Vector3(0.0354436189f,0.0354436189f,0.0354436189f);
-            float scaleMagnitude = other.gameObject.transform.localScale.magnitude;
-            Debug.Log($"This sphere is scaled to: {scaleMagnitude}");
+        if(other.gameObject.tag == "Duplicate" && !ConeCollisionDuplicates.Contains(other.gameObject) && palettePos.Count > 0 && lookedAtObjectCount == 0) {
+            // palettePos.Sort();
+            // other.gameObject.GetComponent<MoveCopyToPlayer>().target = menuPositions[palettePos[0]].transform;
+            // other.gameObject.GetComponent<MoveCopyToPlayer>().palettePosNum = palettePos[0];
+            // palettePos.Remove(palettePos[0]);
+            // other.gameObject.transform.localScale = new Vector3(3f,3f,3f);
+            // float scaleMagnitude = other.gameObject.transform.localScale.magnitude;
+            // //Debug.Log($"This sphere is scaled to: {scaleMagnitude}");
             ConeCollisionDuplicates.Add(other.gameObject);
             // GameObject duplicate = Instantiate(other.gameObject);
             // duplicate.AddComponent<MoveCopyToPlayer>();
@@ -133,14 +131,7 @@ public class InCheck : MonoBehaviour {
 
     void OnTriggerExit(Collider other)
     {
-        foreach(GameObject ob in removeConeWhenLookedAtList){
-            if (other.gameObject.name == ob.name) lookedAtObjectCount--;
-        }
         ConeCollisions.Remove(other.gameObject);
-        // if(other.gameObject.TryGetComponent(out Rigidbody temp)){
-        //     temp.useGravity = true;
-        // }
-
     }
 
     public void getScale(){

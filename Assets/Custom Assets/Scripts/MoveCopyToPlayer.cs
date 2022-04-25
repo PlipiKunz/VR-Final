@@ -14,6 +14,8 @@ public class MoveCopyToPlayer : MonoBehaviour
     private GameObject duplicate;
     public bool iAmCopy = false;
     public bool inMenu = false;
+    public bool hasFallen;
+    public float fallAfter;
 
     public GameObject parent;
     public InCheck inCheck;
@@ -28,9 +30,12 @@ public class MoveCopyToPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        speed = 5f;
+        hasFallen = false;
+        fallAfter = 8f;
         menu = GameObject.Find("menu");
 
-        Debug.Log(menu);
+        //Debug.Log(menu);
         inCheck = GameObject.Find("Cone").GetComponent<InCheck>();
 
         initialScale = Vector3.zero;
@@ -43,17 +48,27 @@ public class MoveCopyToPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!hasFallen && fallAfter - Time.realtimeSinceStartup < 0){
+            rb.useGravity = true;
+            hasFallen = true;
+        }
+        if(rb.useGravity == false){
+            rb.angularVelocity = Vector3.zero;
+            rb.velocity = Vector3.zero;
+        }
         if (inCheck.ConeCollisions.Contains(gameObject))
         {
             // create copy if copy doesn't exist
             if (!copyExists && inCheck.palettePos.Count > 0)
             {
-                Debug.Log("I am duplicating" + gameObject.name + inCheck.palettePos.Count.ToString());
-                rb.velocity = new Vector3(0, 0, 0);
-                rb.isKinematic = false;
-                rb.useGravity = false;
+                inCheck.palettePos.Sort();
+                target = inCheck.menuPositions[inCheck.palettePos[0]].transform;
+                palettePosNum = inCheck.palettePos[0];
+                inCheck.palettePos.Remove(inCheck.palettePos[0]);
+                // Debug.Log("I am duplicating" + gameObject.name + inCheck.palettePos.Count.ToString());
                 duplicate = Instantiate(gameObject,transform.position,transform.rotation);
                 Destroy(duplicate.GetComponent<XRGrabInteractable>());
+                duplicate.transform.localScale = new Vector3(3f,3f,3f);
                 duplicate.GetComponent<Renderer>().material = GetComponent<Renderer>().material;
                 duplicate.layer = 7;
                 duplicate.tag = "Duplicate";
@@ -86,7 +101,9 @@ public class MoveCopyToPlayer : MonoBehaviour
                 float step = speed * Time.deltaTime;
 
                 if(target != null){
+                    Debug.Log(transform.name);
                     Vector3 moveTo = Vector3.MoveTowards(transform.position, target.position, step);
+                    Debug.Log(moveTo);
                     if (transform.position == target.position)
                     {
                         inMenu = true;
