@@ -25,9 +25,18 @@ public class ButtonScript : XRGrabInteractable
     protected override void Grab(){
         if (gameObject.name == "Gather Button") InCheck.ScatterGather = 3;
         else if (gameObject.name == "Scatter Button") InCheck.ScatterGather = -3;
-        else if (gameObject.name == "1x Button") InCheck.moveSpeed = 2;
-        else if (gameObject.name == "5x Button") InCheck.moveSpeed = 10;
-        else if (gameObject.name == "10x Button") InCheck.moveSpeed = 30;
+        else if (gameObject.name == "1x Button") {
+            InCheck.moveSpeed = 2;
+            InCheck.scaleFactor = 10f;
+        }
+        else if (gameObject.name == "5x Button") {
+            InCheck.moveSpeed = 10;
+            InCheck.scaleFactor = 100f;
+        }
+        else if (gameObject.name == "10x Button") {
+            InCheck.moveSpeed = 30;
+            InCheck.scaleFactor = 1000f;
+        }
     }
     protected override void Drop(){
         if (gameObject.name == "Gather Button") InCheck.ScatterGather = 0;

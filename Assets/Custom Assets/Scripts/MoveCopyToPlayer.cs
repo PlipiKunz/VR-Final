@@ -30,7 +30,7 @@ public class MoveCopyToPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 5f;
+        speed = 20f;
         hasFallen = false;
         fallAfter = 8f;
         menu = GameObject.Find("menu");
@@ -59,7 +59,7 @@ public class MoveCopyToPlayer : MonoBehaviour
         if (inCheck.ConeCollisions.Contains(gameObject))
         {
             // create copy if copy doesn't exist
-            if (!copyExists && inCheck.palettePos.Count > 0 && inCheck.lookedAtObjectCount == 0)
+            if (!copyExists && inCheck.palettePos.Count > 0 && inCheck.SelectedObjects == 0)
             {
                 inCheck.palettePos.Sort();
                 target = inCheck.menuPositions[inCheck.palettePos[0]].transform;

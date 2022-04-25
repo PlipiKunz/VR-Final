@@ -7,13 +7,14 @@ using System.Linq;
 public class InCheck : MonoBehaviour {
 
     public Vector3 diff;
+    public float scaleFactor;
     public float scale;
     public GameObject Marker;
     public Vector3 sumPositions;
     public Vector3 averagePos = new Vector3(-100,-100, - 100);
     public List<int> palettePos;
     public List<GameObject> removeConeWhenLookedAtList;
-    public int lookedAtObjectCount;
+    public int SelectedObjects;
     public ConeCollider cone;
     public List<GameObject> ConeCollisions;
     public List<GameObject> ConeCollisionDuplicates;
@@ -36,7 +37,8 @@ public class InCheck : MonoBehaviour {
         moveSpeed = 30;
         diff = Vector3.zero;
         scale = 0;
-        lookedAtObjectCount = 0;
+        scaleFactor = 10f;
+        SelectedObjects = 0;
         cone = GetComponent<ConeCollider>();
         foreach (int index in Enumerable.Range(0, 20))
         {
@@ -48,9 +50,9 @@ public class InCheck : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        lookedAtObjectCount = 0;
+        SelectedObjects = 0;
         foreach(GameObject ob in ConeCollisionDuplicates){
-            if (ob.GetComponent<OnHoverInteractable>() != null && ob.GetComponent<OnHoverInteractable>().selected) lookedAtObjectCount++;
+            if (ob.GetComponent<OnHoverInteractable>() != null && ob.GetComponent<OnHoverInteractable>().selected) SelectedObjects++;
         }
 
         if(diff != Vector3.zero){
@@ -66,7 +68,7 @@ public class InCheck : MonoBehaviour {
             foreach(GameObject ob in ConeCollisionDuplicates){
                 if(ob.GetComponent<OnHoverInteractable>().selected) {
                     var p = ob.GetComponent<MoveCopyToPlayer>().parent;
-                    p.transform.localScale = p.GetComponent<MoveCopyToPlayer>().initialScale + new Vector3(scale, scale, scale);
+                    p.transform.localScale = p.GetComponent<MoveCopyToPlayer>().initialScale + new Vector3(scale * scaleFactor, scale * scaleFactor, scale * scaleFactor);
                 }
             }
         }
