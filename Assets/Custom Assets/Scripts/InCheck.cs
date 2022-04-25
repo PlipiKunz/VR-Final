@@ -9,6 +9,8 @@ public class InCheck : MonoBehaviour {
     public Vector3 diff;
     public float scaleFactor;
     public float scale;
+    public Quaternion rot;
+
     public GameObject Marker;
     public Vector3 sumPositions;
     public Vector3 averagePos = new Vector3(-100,-100, - 100);
@@ -36,6 +38,7 @@ public class InCheck : MonoBehaviour {
         hasInitialDistScale = false;
         moveSpeed = 30;
         diff = Vector3.zero;
+        rot = Quaternion.identity;
         scale = 0;
         scaleFactor = 10f;
         SelectedObjects = 0;
@@ -72,8 +75,20 @@ public class InCheck : MonoBehaviour {
                 }
             }
         }
-        
-        if(ScatterGather != 0){
+
+        if (rot != Quaternion.identity)
+        {
+            foreach (GameObject ob in ConeCollisionDuplicates)
+            {
+                if (ob.GetComponent<OnHoverInteractable>().selected)
+                {
+                    var p = ob.GetComponent<MoveCopyToPlayer>().parent;
+                    p.transform.rotation = rot;
+                }
+            }
+        }
+
+        if (ScatterGather != 0){
             sumPositions = Vector3.zero;
             int c = 0;
             for(int x = 0; x < ConeCollisionDuplicates.Count; x ++){

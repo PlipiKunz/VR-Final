@@ -23,8 +23,11 @@ public class MoveCopyToPlayer : MonoBehaviour
     public GameObject menu;
 
     public bool grabbed;
+
     public Vector3 initialPos;
     public Vector3 initialScale;
+    public Quaternion initialRotation;
+
     public Rigidbody rb;
     public Rigidbody rbDuplicate;
     public bool leftAxisTouch;
@@ -111,9 +114,10 @@ public class MoveCopyToPlayer : MonoBehaviour
                 if(target != null){
                     Debug.Log(transform.name);
                     Vector3 moveTo = Vector3.MoveTowards(transform.position, target.position, step);
-                    Quaternion rotationMove = Quaternion.FromToRotation(transform.rotation.eulerAngles, target.rotation.eulerAngles);
 
-                    transform.rotation = rotationMove;
+/*
+                    Quaternion rotationMove = Quaternion.FromToRotation(transform.rotation.eulerAngles, target.rotation.eulerAngles);
+                    transform.rotation = target.rotation;*/
 
                     Debug.Log(moveTo);
                     if (transform.position == target.position)
@@ -137,4 +141,10 @@ public class MoveCopyToPlayer : MonoBehaviour
     public void setInitialScale(){
         initialScale = transform.localScale;
     }
+
+    public void setInitialRotation()
+    {
+        initialRotation = Quaternion.Euler(0, 0, 0);
+    }
+
 }

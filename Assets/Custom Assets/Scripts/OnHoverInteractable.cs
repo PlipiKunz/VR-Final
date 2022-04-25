@@ -56,6 +56,7 @@ public class OnHoverInteractable : XRGrabInteractable
         if (grabbed){
             Vector3 diff = transform.position - initialPos;
             GetComponent<MoveCopyToPlayer>().inCheck.diff = diff;
+            GetComponent<MoveCopyToPlayer>().inCheck.rot = transform.rotation;
         }
         if (primaryGrip && secondaryGrip){
             GetComponent<MoveCopyToPlayer>().inCheck.getScale();
