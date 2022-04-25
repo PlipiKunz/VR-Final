@@ -105,6 +105,10 @@ public class MoveCopyToPlayer : MonoBehaviour
                 if(target != null){
                     Debug.Log(transform.name);
                     Vector3 moveTo = Vector3.MoveTowards(transform.position, target.position, step);
+                    Quaternion rotationMove = Quaternion.FromToRotation(transform.rotation.eulerAngles, target.rotation.eulerAngles);
+
+                    transform.rotation = rotationMove;
+
                     Debug.Log(moveTo);
                     if (transform.position == target.position)
                     {
