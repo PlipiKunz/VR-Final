@@ -59,7 +59,7 @@ public class MoveCopyToPlayer : MonoBehaviour
         if (inCheck.ConeCollisions.Contains(gameObject))
         {
             // create copy if copy doesn't exist
-            if (!copyExists && inCheck.palettePos.Count > 0)
+            if (!copyExists && inCheck.palettePos.Count > 0 && inCheck.lookedAtObjectCount == 0)
             {
                 inCheck.palettePos.Sort();
                 target = inCheck.menuPositions[inCheck.palettePos[0]].transform;
@@ -78,6 +78,8 @@ public class MoveCopyToPlayer : MonoBehaviour
                 duplicateScript.parent = gameObject;
                 rbDuplicate = duplicate.GetComponent<Rigidbody>();
                 copyExists = true;
+                inCheck.ConeCollisionDuplicates.Add(duplicate);
+
             }
             
         }

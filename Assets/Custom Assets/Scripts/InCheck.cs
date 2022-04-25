@@ -48,6 +48,10 @@ public class InCheck : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        lookedAtObjectCount = 0;
+        foreach(GameObject ob in ConeCollisionDuplicates){
+            if (ob.GetComponent<OnHoverInteractable>() != null && ob.GetComponent<OnHoverInteractable>().selected) lookedAtObjectCount++;
+        }
 
         if(diff != Vector3.zero){
             foreach(GameObject ob in ConeCollisionDuplicates){
@@ -92,10 +96,6 @@ public class InCheck : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         //Debug.Log(other.name);
-        lookedAtObjectCount = 0;
-        foreach(GameObject ob in ConeCollisionDuplicates){
-            if (ob.GetComponent<OnHoverInteractable>() != null && ob.GetComponent<OnHoverInteractable>().selected) lookedAtObjectCount++;
-        }
         if(other.gameObject.tag == "Selectable" && !ConeCollisions.Contains(other.gameObject)) {
             ConeCollisions.Add(other.gameObject);
             // GameObject duplicate = Instantiate(other.gameObject);
@@ -108,25 +108,7 @@ public class InCheck : MonoBehaviour {
             //     temp.velocity = Vector3.zero;
             // }
         }
-        if(other.gameObject.tag == "Duplicate" && !ConeCollisionDuplicates.Contains(other.gameObject) && palettePos.Count > 0 && lookedAtObjectCount == 0) {
-            // palettePos.Sort();
-            // other.gameObject.GetComponent<MoveCopyToPlayer>().target = menuPositions[palettePos[0]].transform;
-            // other.gameObject.GetComponent<MoveCopyToPlayer>().palettePosNum = palettePos[0];
-            // palettePos.Remove(palettePos[0]);
-            // other.gameObject.transform.localScale = new Vector3(3f,3f,3f);
-            // float scaleMagnitude = other.gameObject.transform.localScale.magnitude;
-            // //Debug.Log($"This sphere is scaled to: {scaleMagnitude}");
-            ConeCollisionDuplicates.Add(other.gameObject);
-            // GameObject duplicate = Instantiate(other.gameObject);
-            // duplicate.AddComponent<MoveCopyToPlayer>();
-            // duplicate.transform.position = other.gameObject.transform.position;
-            // duplicate.tag = "Untagged";
-            // ConeCollisionDuplicates.Add(duplicate);
-            // if(other.gameObject.TryGetComponent(out Rigidbody temp)){
-            //     temp.useGravity = false;
-            //     temp.velocity = Vector3.zero;
-            // }
-        }
+        
     }
 
     void OnTriggerExit(Collider other)
