@@ -39,7 +39,7 @@ public class MoveCopyToPlayer : MonoBehaviour
         leftAxisTouch = false;
         speed = 20f;
         hasFallen = false;
-        fallAfter = 8f;
+        fallAfter = 20f;
         menu = GameObject.Find("menu");
 
         //Debug.Log(menu);

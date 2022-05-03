@@ -159,8 +159,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!114 &13195277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,8 +453,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &20875924
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -685,8 +689,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &63240544
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1244,8 +1250,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &190221901
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1415,8 +1423,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!114 &228424644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1707,8 +1717,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &314566461
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1884,8 +1896,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &327604347
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2148,8 +2162,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &396383619
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2464,8 +2480,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!114 &464794377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2890,8 +2908,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &561954699
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3287,8 +3307,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &645346454
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3349,8 +3371,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!114 &647918130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3641,8 +3665,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &683569608
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3973,8 +3999,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &713209197
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4035,8 +4063,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!114 &721911888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4327,8 +4357,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &732939694
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4389,8 +4421,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!114 &753045632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4762,8 +4796,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &769749529
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4978,8 +5014,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!114 &776000583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5871,8 +5909,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &953034405
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6048,8 +6088,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &959292911
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6089,6 +6131,10 @@ PrefabInstance:
     - target: {fileID: 1793489723263756129, guid: 4af1829a219a5b84aa4a9ccfe3cfe6a2, type: 3}
       propertyPath: m_Name
       value: RayInteractor Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793489723263756129, guid: 4af1829a219a5b84aa4a9ccfe3cfe6a2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5989549071027141122, guid: 4af1829a219a5b84aa4a9ccfe3cfe6a2, type: 3}
       propertyPath: m_RootOrder
@@ -6325,8 +6371,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!114 &1026308779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6771,8 +6819,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &1073212515
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6948,8 +6998,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &1075407383
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7125,8 +7177,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!54 &1112250929
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7220,8 +7274,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!114 &1149504172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7906,8 +7962,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &1176371706
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8001,8 +8059,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!114 &1188264631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8498,8 +8558,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &1263965839
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8637,8 +8699,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!114 &1325150521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9049,8 +9113,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!114 &1371750408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9461,8 +9527,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!114 &1498333007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9887,8 +9955,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &1571913708
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10454,8 +10524,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &1698302159
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10582,8 +10654,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!114 &1733198572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10764,8 +10838,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!114 &1771467420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10941,8 +11017,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!114 &1793834470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11118,8 +11196,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!114 &1797791845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11458,8 +11538,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!114 &1854541209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11635,8 +11717,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!114 &1867712075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12008,8 +12092,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &1868604070
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12280,8 +12366,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &1912183358
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12457,8 +12545,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &1913154625
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12836,8 +12926,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!114 &1996750839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13290,8 +13382,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &2044805087
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13467,8 +13561,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &2068690717
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13798,8 +13894,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &2118560322
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13975,8 +14073,10 @@ MonoBehaviour:
   grabbed: 0
   initialPos: {x: 0, y: 0, z: 0}
   initialScale: {x: 0, y: 0, z: 0}
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   rb: {fileID: 0}
   rbDuplicate: {fileID: 0}
+  leftAxisTouch: 0
 --- !u!135 &2120789578
 SphereCollider:
   m_ObjectHideFlags: 0
